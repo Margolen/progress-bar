@@ -1,1 +1,120 @@
 @import 'normalize';
+
+$circle-diameter: 60px;
+
+$circle-thickness: 1px;
+$progress: 15;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 743px;
+  height: 91px;
+  border-radius: 10px;
+  background-color: #3579f5;
+  padding-left: 22px;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $circle-diameter;
+  height: $circle-diameter;
+
+  .progress-ring {
+    width: 100%;
+    height: 100%;
+
+    &__circle-bg {
+      stroke: #ffffff;
+      opacity: 0.5;
+      stroke-width: $circle-thickness;
+      fill: none;
+    }
+
+    &__circle {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: $circle-thickness;
+
+      stroke-dasharray: 3.14159 * $circle-diameter;
+      stroke-dashoffset: 3.14159 * $circle-diameter / 100 * (100 - $progress);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: stroke-dashoffset 0.5s ease;
+    }
+  }
+
+  .progress-text {
+    font-size: 20px;
+    width: 400px;
+    color: #ffffff;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  margin-right: 68px;
+  color: #ffffff;
+
+  &__item {
+    font-size: 12px;
+    margin-bottom: 4px;
+
+    &--checklist {
+      display: inline-block;
+      width: fit-content;
+      background-color: #2364db;
+      color: #fff;
+      font-size: 12px;
+
+      border-radius: 40px;
+      line-height: 18px;
+      padding: 0 13px;
+    }
+
+    &--status {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    &--next-action {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  width: fit-content;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4777ed;
+  background-color: #f4f8ff;
+  border: 1px solid #f4f8ff;
+  border-radius: 6px;
+  padding: 10px 25px;
+  font-size: 14px;
+}

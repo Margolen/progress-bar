@@ -4,9 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Progress-bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="progress">
+        <svg class="progress-ring" width="60" height="60">
+          <circle class="progress-ring__circle-bg" cx="30" cy="30" r="29" />
+          <circle class="progress-ring__circle" cx="30" cy="30" r="29" />
+        </svg>
+        <div class="progress-text">0/7</div>
+      </div>
+      <div class="info">
+        <span class="info__item info__item--checklist">Чеклист</span>
+        <div class="info__item info__item--status">Выполнено: 0 из 7 действий</div>
+        <div class="info__item info__item--next-action">
+          Следующее действие: Созвониться с клиентом до 23.05.24 12:00
+        </div>
+      </div>
+      <button class="button">Открыть чеклист</button>
+    </div>
   </body>
 </html>
